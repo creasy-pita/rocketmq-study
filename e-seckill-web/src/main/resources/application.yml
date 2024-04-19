@@ -2,15 +2,16 @@ server:
     port: 8081
     tomcat:
         threads:
-            max: 400
+            max: 200
 spring:
     redis:
         host: localhost
         port: 6379
         database: 0
+        password: redis@gisquest.com
 rocketmq:
-    name-server: 192.168.206.186:9876
+    name-server: 192.168.16.152:9876
     producer:
         group: seckill-producer-group
-        access-key: rocketmq2
-        secret-key: 12345678
+#        access-key: rocketmq2
+#        secret-key: 12345678

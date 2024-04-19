@@ -6,5 +6,5 @@ package com.powernode.constant;
  */
 public interface MqConstant {
 
-    String NAME_SRV_ADDR = "192.168.206.186:9876";
+    String NAME_SRV_ADDR = "192.168.16.152:9876";
 }

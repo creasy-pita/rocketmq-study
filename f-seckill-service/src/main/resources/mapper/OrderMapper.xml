@@ -3,7 +3,7 @@
 <mapper namespace="com.powernode.mapper.OrderMapper">
   <resultMap id="BaseResultMap" type="com.powernode.domain.Order">
     <!--@mbg.generated-->
-    <!--@Table `order`-->
+    <!--@Table orders-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="userid" jdbcType="INTEGER" property="userid" />
     <result column="goodsid" jdbcType="INTEGER" property="goodsid" />
@@ -17,24 +17,24 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from `order`
+    from orders
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
-    delete from `order`
+    delete from orders
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.powernode.domain.Order" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `order` (userid, goodsid, createtime
+    insert into orders (userid, goodsid, createtime
       )
     values (#{userid,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.powernode.domain.Order" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `order`
+    insert into orders
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userid != null">
         userid,
@@ -60,7 +60,7 @@
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.powernode.domain.Order">
     <!--@mbg.generated-->
-    update `order`
+    update orders
     <set>
       <if test="userid != null">
         userid = #{userid,jdbcType=INTEGER},
@@ -76,7 +76,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.powernode.domain.Order">
     <!--@mbg.generated-->
-    update `order`
+    update orders
     set userid = #{userid,jdbcType=INTEGER},
       goodsid = #{goodsid,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP}

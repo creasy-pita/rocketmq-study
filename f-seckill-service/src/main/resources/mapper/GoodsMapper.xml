@@ -16,7 +16,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    goods_id, goods_name, price, content, `status`, total_stocks, create_time, update_time, 
+    goods_id, goods_name, price, content, status, total_stocks, create_time, update_time,
     spike
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -34,7 +34,7 @@
   <insert id="insert" keyColumn="goods_id" keyProperty="goodsId" parameterType="com.powernode.domain.Goods" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into goods (goods_name, price, content, 
-      `status`, total_stocks, create_time, 
+      status, total_stocks, create_time,
       update_time, spike)
     values (#{goodsName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{content,jdbcType=LONGVARCHAR}, 
       #{status,jdbcType=INTEGER}, #{totalStocks,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
@@ -54,7 +54,7 @@
         content,
       </if>
       <if test="status != null">
-        `status`,
+        status,
       </if>
       <if test="totalStocks != null">
         total_stocks,
@@ -110,7 +110,7 @@
         content = #{content,jdbcType=LONGVARCHAR},
       </if>
       <if test="status != null">
-        `status` = #{status,jdbcType=INTEGER},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="totalStocks != null">
         total_stocks = #{totalStocks,jdbcType=INTEGER},
@@ -133,7 +133,7 @@
     set goods_name = #{goodsName,jdbcType=VARCHAR},
       price = #{price,jdbcType=DECIMAL},
       content = #{content,jdbcType=LONGVARCHAR},
-      `status` = #{status,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
       total_stocks = #{totalStocks,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -142,7 +142,7 @@
   </update>
 
   <select id="selectSeckillGoods" resultMap="BaseResultMap">
-    select goods_id,total_stocks from   goods where `status` = 1 and spike = 1
+    select goods_id,total_stocks from   goods where status = 1 and spike = 1
     </select>
 
   <update id="updateStock">

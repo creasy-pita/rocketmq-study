@@ -20,6 +20,11 @@ import java.util.List;
  */
 public class ASimpleTest {
 
+//    public static void main(String[] args) throws Exception {
+////        simpleProducer();
+//        simpleConsumer();
+//    }
+
     @Test
     public void simpleProducer() throws Exception {
         // 创建一个生产者  (制定一个组名)
@@ -41,7 +46,7 @@ public class ASimpleTest {
 
     //////////////////// 消费者
     @Test
-    public void simpleConsumer() throws Exception {
+    public  void simpleConsumer() throws Exception {
         // 创建一个消费者
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test-consumer-group");
         // 连接namesrv
